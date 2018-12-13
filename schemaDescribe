@@ -1,0 +1,18 @@
+    /////obtener los valores de un pick list
+    
+    
+    List<SelectOption> opt;
+        Schema.DescribeFieldResult fieldResult = ONTAP__Order_Item__c.ONTAP__Order_Line_Type__c .getDescribe();
+            List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
+            opt = new List<SelectOption>();
+            for (Schema.PicklistEntry f: ple) {
+                opt.add( new SelectOption(f.getLabel(), f.getValue()) );
+            } 
+    List<String> fin=new List<String>();
+    for (SelectOption sel:opt){
+        
+        fin.add(sel.getValue());
+        
+    }
+
+system.debug(fin);

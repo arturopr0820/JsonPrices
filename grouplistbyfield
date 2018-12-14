@@ -1,0 +1,11 @@
+Map<String, wrapperClass[]> codeToABC = new Map<String, wrapperClass[]>();
+for(wrapperClass record: general) {
+    if(codeToABC.containsKey(record.productType)) {
+        // Code already in map
+        codeToABC.get(record.productType).add(record);
+    } else {
+        // Code is not yet in Map
+        codeToABC.put(record.productType, new List<wrapperClass> { record });
+    }
+}
+system.debug(codeToABC);

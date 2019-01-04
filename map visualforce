@@ -1,0 +1,11 @@
+<apex:page standardController="Case">    
+    <!-- for test run pass Account Id   <apex:mapMarker />
+    https://xxx.salesforce.com/apex/NearbyContacts?id=001D000000JRBet -->    
+    <apex:pageBlock >
+        <apex:pageBlockSection > 
+        
+            <apex:map width="600px" height="400px" mapType="roadmap" center="{!Case.ISSM_PostalCode__c},{!Case.ISSM_LocalColony__c},{!Case.ISSM_LocalNumber__c},{!Case.ISSM_LocalStreet__c}">   
+                <apex:mapMarker position="{!Case.ISSM_PostalCode__c},{!Case.ISSM_LocalColony__c},{!Case.ISSM_LocalNumber__c},{!Case.ISSM_LocalStreet__c}" /></apex:map>
+        </apex:pageBlockSection>
+    </apex:pageBlock>    
+</apex:page>
